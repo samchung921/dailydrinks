@@ -10,7 +10,7 @@ P.S. make sure you've installed the nodeJS
 ## How to operate
 1. To view the order list:
 If every thing is ok, you could see the two default daily drinks order on the list.
-
+ 
 2.To place an new order:
 You can press the new order button to place an new order.
 When the new order has been placed, the list will add the new order that you have entered.
