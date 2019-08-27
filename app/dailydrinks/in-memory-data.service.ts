@@ -1,0 +1,19 @@
+import { DailyDrink } from './dailydrinks.model';
+import { InMemoryDbService } from 'angular-in-memory-web-api';
+
+export class InMemoryDataService implements InMemoryDbService {
+    
+    createDb(): {} {
+
+        let dailydrinks: DailyDrink[] = [
+            {id: '1', name: "Coca Cola", price: 30, notes: 'Lots of remarks'},
+            {id: '2', name: "Lemon Juice", price: 15, notes: 'Lots of remarks'},
+            
+        ];
+
+        return {
+            'dailydrinks': dailydrinks
+        };
+    }
+
+}

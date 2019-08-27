@@ -1,0 +1,44 @@
+<div class="container"> 
+    <h2>Order DailyDrink</h2>
+
+    <form (ngSubmit)="onSubmit()" #DailyDrinkForm="ngForm" novalidate>
+        <div [ngClass]="getFormGroupClass(name.valid, name.pristine)">
+            <label for="name" class="form-control-label">Name</label>
+            <input type="text" placeholder="Input drink's name" #name="ngModel"name="name"
+            [ngClass]="getFormControlClass(name.valid, name.pristine)" 
+            required
+            [(ngModel)]="dailyDrink.name">
+            <div class="form-control-feedback" [hidden]="name.valid || name.pristine"> Name field is required</div>
+        </div>
+
+        <div [ngClass]="getFormGroupClass(price.valid, price.pristine)">
+            <label for="price">Price</label>
+            <input type="price" placeholder="Input the price" #price="ngModel"name="price"
+            [ngClass]="getFormControlClass(price.valid, price.pristine)"
+            required
+            [(ngModel)]="dailyDrink.price"/>
+            <div class="form-control-feedback" [hidden]="price.valid || price.pristine"> Price field is required</div>
+        </div>
+
+        <div [ngClass]="getFormGroupClass(notes.valid, notes.pristine)">
+            <label for="name">Notes</label>
+            <textarea rows="5" placeholder="Input some notes" name="notes" #notes="ngModel"
+            [ngClass]="getFormControlClass(notes.valid, notes.pristine)"
+            
+            [(ngModel)]="dailyDrink.notes">
+                
+            </textarea>
+            <!--
+            <input type="text" rows="5" placeholder="Input some notes" name="notes" #notes="ngModel"
+            [ngClass]="getFormControlClass(notes.valid, notes.pristine)"
+            [(ngModel)]="dailyDrink.notes" />
+            -->
+            <div class="form-control-feedback" [hidden]="notes.valid || notes.pristine"> </div>
+        </div>
+
+        <button class="btn btn-success" [disabled]="!DailyDrinkForm.form.valid">Save</button>
+        <a class="btn btn-secondary" (click)="forgetit()">Forget It</a>
+
+    </form>
+
+</div>
